@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz@0,8..60;1,8..60&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>{% block 'title' %}{% endblock %}</title>
+    
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-base">
+      <div class="container-fluid">
+        <div class="d-flex">
+          <a class="navbar-brand a-white" href="#">AMOR & PATAS ܁</a>
+          <div class="navbar-nav">
+            <a class="nav-link active a-white" aria-current="page" href="#">Início</a>
+            <a class="nav-link a-white" href="#">Serviços</a>
+            <a class="nav-link a-white" href="#">Adoção</a>
+          </div>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link a-white" href="#">Cadastro</a>
+          <a class="nav-link a-white" href="#">Login</a>
+        </div>
+      </div>
+    </nav>
+
+   
+
+    {% block 'body' %}
+    {% endblock %}
+
+    <section class="home-section">
+      {% block 'section'%}
+      {% endblock %}
+    </section>
+
+    <div class="site-footer">
+      <div class="container">
+        <div class="row text-center">
+          <p>Desenvolvido por Hévelin Lima • 2023</p>
+        </div>
+        <ul class="icon">
+          <li>
+            <a class="github" href="https://github.com/hevelinlima" target="_blank">
+              <i class="devicon-github-original-wordmark"></i>
+            </a>
+          </li>
+          <li>
+            <a class="linkedin" href="https://www.linkedin.com/in/hevelin-lima/" target="_blank">
+              <i class="devicon-linkedin-plain" ></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

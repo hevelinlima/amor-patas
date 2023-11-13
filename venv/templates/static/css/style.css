@@ -1,0 +1,165 @@
+
+body {
+  font-family: "Source Serif 4", serif;
+  line-height: 1.5;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.principal {
+  padding: 5rem 0 10rem 0;
+  background: #072e33;
+  margin-bottom: 80px; 
+}
+.principal h1 {
+  color: #ffffff;
+  font-size: 55px; 
+}
+.principal .intro {
+  position: relative;
+  z-index: 1; 
+}
+.principal .carousel-inner {
+  background: #ffffff;
+  max-width: 800px;
+  left: -100px;
+  z-index: 0;
+  position: relative;
+  border-radius: 200px;
+  -webkit-box-shadow: 0 25px 50px -10px rgba(26, 55, 77, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(26, 55, 77, 0.4);
+  height: 550px;
+  margin-bottom: -200px; 
+}  
+        
+
+a {
+  color: #1A374D;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; 
+}
+a:hover {
+  color: #1A374D;
+  text-decoration: none; 
+}
+
+::-moz-selection {
+background: #000000;
+color: #ffffff; 
+}
+
+::selection {
+background: #000000;
+color: #ffffff; 
+}  
+
+.custom-h1{
+  margin-bottom: 35px;
+}
+
+.custom-cont{
+  margin-bottom: 40px;
+}
+
+.custom-card {
+  background-color: #072e3330; 
+  border-radius: 10px;
+  padding: 5%; 
+  margin-bottom: 5%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  height: auto; 
+  margin-right: 5%;
+}
+
+.custom-card:last-child{
+  margin-right: 0; 
+}
+
+
+.custom-card h3 {
+  color: #333; 
+}
+
+.custom-card h4 {
+  color: #555; 
+}
+
+.btn-design {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  font-size: 14px; 
+  color: #fff;
+  text-decoration: none;
+
+  border: 2px solid #ffffff;
+}
+.btn-design:hover {
+  background: #ffffff;
+ }
+
+
+.site-footer {
+  font-size: 14px;
+  color: rgba(29, 23, 23, 0.712);
+  line-height: 1.6;
+  padding-top: 20px;
+}
+
+ul.icon{
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+
+  font-size: 22px;
+  
+}
+
+li{
+  margin-right: 10px;
+}
+
+li:last-child{
+  margin-right: 0px;
+}
+
+p{
+  margin-bottom: 0;
+}
+
+a.linkedin, a.github{
+  color: rgba(29, 23, 23, 0.712);
+  text-decoration: none;
+}
+
+a.linkedin:hover, a.github:hover{
+  filter: blur(0.75px);
+  text-decoration: none;
+}
+
+.section-a{
+  background-color: rgba(26, 77, 57, 0.959);
+  padding: 40px 0;
+}
+
+
+.nav-base{
+  background-color: #072e33 !important;
+}
+
+a.a-white{
+  color: #fff !important;
+}
+
+@media (max-width: 991.98px) {
+  .principal h1 {
+    font-size: 45px; }
+  .principal .carousel-inner {
+    left: 0; }
+  .site-footer {
+    padding-top: 30px;
+  }
+}
