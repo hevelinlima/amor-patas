@@ -8,12 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz@0,8..60;1,8..60&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="icon" href="images/logo.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
 
     <!-- Bootstrap CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block 'head' %}{% endblock %}
 
     <title>{% block 'title' %}{% endblock %}</title>
     
@@ -39,7 +41,7 @@
 
    
 
-    {% block 'body' %}
+    {% block 'principal' %}
     {% endblock %}
 
     <section class="home-section">
@@ -68,6 +70,6 @@
     </div>
 
     <!-- Bootstrap Bundle JS -->
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
