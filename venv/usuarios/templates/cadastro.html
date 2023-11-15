@@ -35,7 +35,7 @@
     <div class="text-center">
       <h3 class="">Cadastro de usuário</h3>
       <div class="row">
-        <form method="POST" action="{% url 'usuarios:validacao' %}">
+        <form method="POST" action="{% url 'usuarios:validacao_cadastro' %}">
           {% csrf_token %}
           <div class="row mb-3">
             <label for="inputNome3" class="col-sm-2 col-form-label">Nome</label>
@@ -61,7 +61,8 @@
               <input name="senha" type="password" class="form-control" id="inputSenha3">
             </div>
           </div>
-          <input class="btn-primary btn-enviar" type="submit" value="Cadastrar">
+          <input class="btn-primary btn-lg btn-enviar" type="submit" value="Enviar">
+          <a href="{% url 'usuarios:login' %}" class="btn btn-lg btn-enviar">Login</a>
         </form>
       </div>
     </div>
