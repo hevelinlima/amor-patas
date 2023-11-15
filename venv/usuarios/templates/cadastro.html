@@ -7,6 +7,31 @@
 
 {% block 'principal' %}
   <div class="container body-a">
+    {% if status == '1' %}
+      <div class="alert alert-danger" role="alert">
+        Os campos Nome, Sobrenome e Email não podem estar vazios.
+      </div>
+    {% endif %}
+    {% if status == '2' %}
+      <div class="alert alert-danger" role="alert">
+        Sua senha deve ter pelo menos 8 caracteres.
+      </div>
+    {% endif %}
+    {% if status == '3' %}
+      <div class="alert alert-danger" role="alert">
+        Este usuário já existe no sistema.
+      </div>
+    {% endif %}
+    {% if status == '4' %}
+      <div class="alert alert-danger" role="alert">
+        Erro interno do sistema.
+      </div>
+    {% endif %}
+    {% if status == '0' %}
+      <div class="alert alert-success" role="alert">
+        Usuário cadastrado com sucesso!
+      </div>
+    {% endif %}
     <div class="text-center">
       <h3 class="">Cadastro de usuário</h3>
       <div class="row">
