@@ -1,0 +1,19 @@
+
+.btn-enviar{
+  margin: 20px 0;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  font-size: 14px; 
+  background: #072e33;
+  color: #fff;
+  text-decoration: none;
+
+  transition: all 0.3 ease-in;
+}
+.btn-enviar:hover {
+  background: #325e64;
+ }

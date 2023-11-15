@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+{% block 'title' %} Cadastro {% endblock %}
+
+{% block 'principal' %}
+  <div class="container body-a">
+    <div class="text-center">
+      <h3 class="">Cadastro de usuário</h3>
+      <div class="row">
+        <form method="POST" action="{% url 'usuarios:validacao' %}">
+          {% csrf_token %}
+          <div class="row mb-3">
+            <label for="inputNome3" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-10">
+              <input name="nome" type="text" class="form-control" id="inputNome3">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputSobrenome3" class="col-sm-2 col-form-label">Sobrenome</label>
+            <div class="col-sm-10">
+              <input name="sobrenome" type="text" class="form-control" id="inputSobrenome3">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input name="email" type="email" class="form-control" id="inputEmail3">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputSenha3" class="col-sm-2 col-form-label">Senha</label>
+            <div class="col-sm-10">
+              <input name="senha" type="password" class="form-control" id="inputSenha3">
+            </div>
+          </div>
+          <input class="btn-primary btn-enviar" type="submit" value="Cadastrar">
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
