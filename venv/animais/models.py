@@ -2,33 +2,56 @@ from django.db import models
 from datetime import date
 from django.core.validators import MinValueValidator
 
+class Especies(models.Model):
+  especie = models.CharField(max_length=30)
+  nome_cientifico = models.CharField(max_length=30)
+  descricao = models.TextField() 
+
+  def __str__(self) -> str:
+    return self.especie
+  
+  class Meta: 
+    verbose_name = "Espécie"
+    ordering = ["especie"]
+  
+class Porte(models.Model):
+  tipo = models.CharField(max_length=30)
+  descrição = models.TextField()
+
+  def __str__(self) -> str:
+    return self.tipo
+  
+class Raca(models.Model):
+  raca = models.CharField(max_length=30)
+  descricao = models.TextField() 
+
+  def __str__(self) -> str:
+    return self.raca
+  
+class Genero(models.Model):
+  genero = models.CharField(max_length=30)
+  descricao = models.TextField() 
+
+  def __str__(self) -> str:
+    return self.genero
+  
 # Create your models here.
 class Animais(models.Model):
-  porte_choices = [
-    ("Pequeno", "Pequeno"),
-    ("Médio", "Médio"),
-    ("Grande", "Grande"),
-    ("Extra Grande", "Extra Grande"),
-  ]
   vacinacao_choices = [
     ("Sim", "Sim"),
     ("Não", "Não")
   ]
-  genero_choices = [
-    ("Fêmea", "Fêmea"),
-    ("Macho", "Macho")
-  ]
   nome = models.CharField(max_length=100)
-  especie = models.CharField(max_length=50)
+  especie = models.ForeignKey(Especies, on_delete=models.DO_NOTHING)
   idade = models.IntegerField(validators=[MinValueValidator(0)], default=1)
-  porte = models.CharField(max_length=12, choices=porte_choices, default="Pequeno")
+  porte = models.ForeignKey(Porte, on_delete=models.DO_NOTHING)
   peso = models.IntegerField(validators=[MinValueValidator(0)], default=1)
-  raça = models.CharField(max_length=50)
+  raça = models.ForeignKey(Raca, on_delete=models.DO_NOTHING)
   origem = models.CharField(max_length=100)
   vacinacao_em_dia = models.CharField(max_length=3, choices=vacinacao_choices, default="Sim")
-  genero = models.CharField(max_length=5, choices=genero_choices, default="Fêmea")
+  genero = models.ForeignKey(Genero, on_delete=models.DO_NOTHING)
   
   class Meta: 
-    verbose_name = "Registro de animais"
-    verbose_name_plural = "Registros dos animais"
+    verbose_name = "Animal"
+    verbose_name_plural = "Registro de animais"
     ordering = ["nome"]
