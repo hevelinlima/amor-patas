@@ -5,9 +5,6 @@ from django.urls import reverse
 from hashlib import sha256
 
 # Create your views here.
-def inicio(request):
-  return render(request, 'inicio.html')
-
 def login(request):
   status = request.GET.get('status')
   return render(request,'login.html', {'status': status})
