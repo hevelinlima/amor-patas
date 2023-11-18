@@ -31,18 +31,6 @@ body {
   height: 550px;
   margin-bottom: -200px; 
 }  
-        
-
-a {
-  color: #1A374D;
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease; 
-}
-a:hover {
-  color: #1A374D;
-  text-decoration: none; 
-}
 
 ::-moz-selection {
 background: #000000;

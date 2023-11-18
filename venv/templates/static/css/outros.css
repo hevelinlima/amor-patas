@@ -1,3 +1,6 @@
+body{
+  height: 600px;
+}
 
 .btn-enviar{
   margin: 20px 0;
@@ -16,4 +19,6 @@
 }
 .btn-enviar:hover {
   background: #325e64;
- }
+}
+
+

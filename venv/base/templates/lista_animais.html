@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
 
 {% block 'title' %}
 Animais para adoção
@@ -6,21 +9,29 @@ Animais para adoção
 
 {% block 'principal' %}
 
-    <h1 class="text-center">Animais para adoção</h1>
+  <h1 class="text-center">Animais para adoção</h1>
 
-    <div class="container">
-      <div class="row">
-            {% for animal in animais %}
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{ animal.nome }}</h5>
-                  <p class="card-text">{{ animal.especie }}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            {% endfor %}
-      </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for animal in animais %}
+        <div class="col">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ animal.nome }}</h5>
+              <p class="card-text">{{ animal.especie }}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-secondary">
+                <a href="{% url 'base:card_animal' animal.id %}" class="btn btn-primary">Ver {{ animal.nome }}</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
+  </div>
+  
+  
 
 {% endblock %}

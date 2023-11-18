@@ -5,24 +5,19 @@ Página de detalhes
 {% endblock %}
 
 {% block 'principal' %}
-
-    <h1>Lista de Animais para adoção</h1>
-
-    <ul>
-        {% for animal in animais %}
-            <li>
-                <strong>Nome:</strong> {{ animal.nome }}<br>
-                <strong>Espécie:</strong> {{ animal.especie }}<br>
-                <strong>Idade:</strong> {{ animal.idade }} anos<br>
-                <strong>Porte:</strong> {{ animal.porte }}<br>
-                <strong>Peso:</strong> {{ animal.peso }} g<br>
-                <strong>Raça:</strong> {{ animal.raça }}<br>
-                <strong>Origem:</strong> {{ animal.origem }}<br>
-                <strong>Vacinação em Dia:</strong> {{ animal.vacinacao_em_dia }}<br>
-                <strong>Gênero:</strong> {{ animal.genero }}<br>
-            </li>
-            <br>
-        {% endfor %}
-    </ul>
-
+    <div class="container">
+        <div class="row" >
+            <div class="text-center">
+                <strong>Nome:</strong> {{ card.nome }}<br>
+                <strong>Espécie:</strong> {{ card.especie }}<br>
+                <strong>Idade:</strong> {{ card.idade }} anos<br>
+                <strong>Porte:</strong> {{ card.porte }}<br>
+                <strong>Peso:</strong> {{ card.peso }} g<br>
+                <strong>Raça:</strong> {{ card.raça }}<br>
+                <strong>Origem:</strong> {{ card.origem }}<br>
+                <strong>Vacinação em Dia:</strong> {{ card.vacinacao_em_dia }}<br>
+                <strong>Gênero:</strong> {{ card.genero }}<br>
+            </div>
+        </div>
+    </div>
 {% endblock %}

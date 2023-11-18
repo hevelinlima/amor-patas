@@ -6,5 +6,6 @@ app_name = 'base'
 urlpatterns = [
     path('', views.inicio, name='Amor&Patas'),
     path('contatos/', views.contatos, name='contactus'),
-    path('lista_animais/', views.lista_animais, name="lista_animais")
+    path('lista_animais/', views.lista_animais, name="lista_animais"),
+    path('card_animal/<int:id>', views.card_animal, name="card_animal")
 ]
