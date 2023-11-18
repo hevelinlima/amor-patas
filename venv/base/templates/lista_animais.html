@@ -5,5 +5,22 @@ Animais para adoção
 {% endblock %}
 
 {% block 'principal' %}
-  {{ animais }}
+
+    <h1 class="text-center">Animais para adoção</h1>
+
+    <div class="container">
+      <div class="row">
+            {% for animal in animais %}
+              <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ animal.nome }}</h5>
+                  <p class="card-text">{{ animal.especie }}</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            {% endfor %}
+      </div>
+    </div>
+
 {% endblock %}

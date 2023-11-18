@@ -24,17 +24,22 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary nav-base">
       <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="d-flex">
           <a class="navbar-brand a-white" href="{% url 'base:Amor&Patas' %}">AMOR & PATAS ܁</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <div class="navbar-nav">
             <a class="nav-link active a-white" aria-current="page" href="{% url 'base:Amor&Patas' %}">Início</a>
             <a class="nav-link a-white" href="{% url 'base:lista_animais' %}">Animais para adoção</a>
-            <a class="nav-link a-white" href="#">Adoção</a>
+            <a class="nav-link a-white" href="{% url 'base:contactus' %}">Contatos</a>
           </div>
-        </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link a-white" href="{% url 'usuarios:cadastro' %}">Cadastro</a>
-          <a class="nav-link a-white" href="{% url 'usuarios:login' %}">Login</a>
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link a-white" href="{% url 'usuarios:cadastro' %}">Cadastro</a>
+            <a class="nav-link a-white" href="{% url 'usuarios:login' %}">Login</a>
+          </div>
         </div>
       </div>
     </nav>

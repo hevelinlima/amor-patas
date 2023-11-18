@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block 'title' %}
+Página de detalhes
+{% endblock %}
+
+{% block 'principal' %}
+
+    <h1>Lista de Animais para adoção</h1>
+
+    <ul>
+        {% for animal in animais %}
+            <li>
+                <strong>Nome:</strong> {{ animal.nome }}<br>
+                <strong>Espécie:</strong> {{ animal.especie }}<br>
+                <strong>Idade:</strong> {{ animal.idade }} anos<br>
+                <strong>Porte:</strong> {{ animal.porte }}<br>
+                <strong>Peso:</strong> {{ animal.peso }} g<br>
+                <strong>Raça:</strong> {{ animal.raça }}<br>
+                <strong>Origem:</strong> {{ animal.origem }}<br>
+                <strong>Vacinação em Dia:</strong> {{ animal.vacinacao_em_dia }}<br>
+                <strong>Gênero:</strong> {{ animal.genero }}<br>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
