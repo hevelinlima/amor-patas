@@ -1,22 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+
 
 {% block 'title' %}
 Página de detalhes
 {% endblock %}
 
 {% block 'principal' %}
-    <div class="container">
-        <div class="row" >
-            <div class="text-center">
+    <div class="container div-body">
+        <div class="row justify-content-center">
+            <div class="col-4 ">
+                <img src="{{ card.photo.url }}" class="w-100" alt="...">
+            </div>
+            <div class="col-4">
                 <strong>Nome:</strong> {{ card.nome }}<br>
                 <strong>Espécie:</strong> {{ card.especie }}<br>
                 <strong>Idade:</strong> {{ card.idade }} anos<br>
                 <strong>Porte:</strong> {{ card.porte }}<br>
                 <strong>Peso:</strong> {{ card.peso }} g<br>
                 <strong>Raça:</strong> {{ card.raça }}<br>
-                <strong>Origem:</strong> {{ card.origem }}<br>
                 <strong>Vacinação em Dia:</strong> {{ card.vacinacao_em_dia }}<br>
                 <strong>Gênero:</strong> {{ card.genero }}<br>
+                <strong>Comportamento do animal:</strong> {{ card.comportamento }}<br>
             </div>
         </div>
     </div>

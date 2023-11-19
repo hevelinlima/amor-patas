@@ -11,25 +11,25 @@ body {
   background: #072e33;
   margin-bottom: 80px; 
 }
+
 .principal h1 {
   color: #ffffff;
   font-size: 55px; 
 }
 .principal .intro {
   position: relative;
-  z-index: 1; 
 }
+
 .principal .carousel-inner {
-  background: #ffffff;
   max-width: 800px;
   left: -100px;
-  z-index: 0;
+ 
   position: relative;
   border-radius: 200px;
-  -webkit-box-shadow: 0 25px 50px -10px rgba(26, 55, 77, 0.4);
-  box-shadow: 0 25px 50px -10px rgba(26, 55, 77, 0.4);
   height: 550px;
   margin-bottom: -200px; 
+
+  box-shadow: 0 25px 40px -10px #072e33;
 }  
 
 ::-moz-selection {

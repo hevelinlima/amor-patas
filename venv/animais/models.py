@@ -24,6 +24,7 @@ class Porte(models.Model):
 class Raca(models.Model):
   raca = models.CharField(max_length=30)
   descricao = models.TextField() 
+  especie = models.ForeignKey(Especies, on_delete=models.DO_NOTHING, default=1)
 
   def __str__(self) -> str:
     return self.raca
@@ -47,9 +48,10 @@ class Animais(models.Model):
   porte = models.ForeignKey(Porte, on_delete=models.DO_NOTHING)
   peso = models.IntegerField(validators=[MinValueValidator(0)], default=1)
   raça = models.ForeignKey(Raca, on_delete=models.DO_NOTHING)
-  origem = models.CharField(max_length=100)
   vacinacao_em_dia = models.CharField(max_length=3, choices=vacinacao_choices, default="Sim")
   genero = models.ForeignKey(Genero, on_delete=models.DO_NOTHING)
+  comportamento = models.CharField(max_length=255, default='Comportamento padrão') 
+  photo = models.ImageField(upload_to='MEDIA_URL', blank=True, null=True)
   
   class Meta: 
     verbose_name = "Animal"
