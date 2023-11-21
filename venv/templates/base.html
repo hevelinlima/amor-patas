@@ -36,10 +36,17 @@
             <a class="nav-link a-white" href="{% url 'base:lista_animais' %}">Animais para adoção</a>
             <a class="nav-link a-white" href="{% url 'base:contactus' %}">Contatos</a>
           </div>
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link a-white" href="{% url 'usuarios:cadastro' %}">Cadastro</a>
-            <a class="nav-link a-white" href="{% url 'usuarios:login' %}">Login</a>
-          </div>
+          {% if request.user.is_authenticated %}
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link a-white">Olá, {{ user.username }}</a>
+              <a class="nav-link a-white" href="{% url 'logout' %}">Sair</a>
+            </div>
+          {% else %}
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link a-white" href="{% url 'registrar' %}">Cadastro</a>
+              <a class="nav-link a-white" href="{% url 'login' %}">Login</a>
+            </div>
+          {% endif %}
         </div>
       </div>
     </nav>
