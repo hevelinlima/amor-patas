@@ -11,7 +11,7 @@ Animais para adoção
 
   <h1 class="text-center">Animais para adoção</h1>
   <div class="col-md-6 offset-md-3">
-    <form action="{% url 'base:search_animais' %}" method=POST class="d-flex" role="search">
+    <form action="{% url 'base:search_animais' %}" method=POST class="d-flex" role="search" target="_blank">
       {% csrf_token %}
       <input type="search" name="pesquisa" class="form-control me-2" placeholder="Pesquise pela espécie, raça, gênero ou porte desejados">
 
@@ -24,13 +24,13 @@ Animais para adoção
     <div class="row row-cols-1 row-cols-md-3 g-4">
       {% for animal in animais %}
         <div class="col">
-          <div class="card h-100">
+          <div class="card h-100 card-all">
             <img width="100%" src="{{ animal.photo.url }}" class="card-img-top" alt="...">
-            <div class="card-body">
+            <div class="card-body card-details">
               <h5 class="card-title">{{ animal.nome }}</h5>
               <p class="card-text">{{ animal.especie }}</p>
             </div>
-            <div class="card-footer">
+            <div class="card-footer card-rp">
               <small class="text-body-secondary">
                 <a href="{% url 'base:card_animal' animal.id %}" class="btn btn-primary">Ver {{ animal.nome }}</a>
               </small>
