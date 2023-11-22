@@ -10,6 +10,15 @@ Animais para adoção
 {% block 'principal' %}
 
   <h1 class="text-center">Animais para adoção</h1>
+  <div class="col-md-6 offset-md-3">
+    <form action="{% url 'base:search_animais' %}" method=POST class="d-flex" role="search">
+      {% csrf_token %}
+      <input type="search" name="pesquisa" class="form-control me-2" placeholder="Pesquise pela espécie, raça, gênero ou porte desejados">
+
+      <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+
+    </form>
+  </div>
 
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -25,6 +34,14 @@ Animais para adoção
               <small class="text-body-secondary">
                 <a href="{% url 'base:card_animal' animal.id %}" class="btn btn-primary">Ver {{ animal.nome }}</a>
               </small>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="container justify-content-center">
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <h1 class="text-center">Não encontrado.</h1>
             </div>
           </div>
         </div>

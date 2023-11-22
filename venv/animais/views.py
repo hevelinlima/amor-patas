@@ -1,7 +1,13 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.urls import reverse 
+from django.shortcuts import render
+from animais.models import Animais
 
-# Create your views here.
-
+"""def lista_animais(request):
+    query = request.GET.get('pesquisa')
     
+    if query:
+        animais = Animais.objects.filter(nome__icontains=query)
+    else:
+        animais = Animais.objects.all()
+
+    return render(request, 'lista_animais.html', {'animais': animais})"""
+

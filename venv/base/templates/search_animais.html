@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+{% block 'title' %}
+Pesquisa
+{% endblock %}
+
+{% block 'principal' %}
+  {% if pesquisa %}
+    <h1>Você procurou por {{ pesquisa }}</h1>
+    <br>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for animal in animais %}
+          <div class="col">
+              <div class="card h-100">
+                <img width="100%" src="{{ animal.photo.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ animal.nome }}</h5>
+                  <p class="card-text">{{ animal.especie }}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-body-secondary">
+                    <a href="{% url 'base:card_animal' animal.id %}" class="btn btn-primary">Ver {{ animal.nome }}</a>
+                  </small>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <h1>Nenhuma pesquisa realizada.</h1>
+  {% endif %}
+
+{% endblock %}
