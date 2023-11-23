@@ -34,6 +34,9 @@
           <div class="navbar-nav">
             <a class="nav-link active a-white" aria-current="page" href="{% url 'base:Amor&Patas' %}">Início</a>
             <a class="nav-link a-white" href="{% url 'base:lista_animais' %}">Animais para adoção</a>
+            {% if user.is_authenticated and user.solicitacaoadocao_set.all %}
+              <a class="nav-link active a-white" aria-current="page" href="{% url 'base:verificar_status' solicitacao_id=user.solicitacaoadocao_set.first.id %}">Situação de adoção</a>
+            {% endif %}
             <a class="nav-link a-white" href="{% url 'base:contactus' %}">Contatos</a>
           </div>
           {% if request.user.is_authenticated %}

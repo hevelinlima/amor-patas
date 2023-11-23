@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+{% block 'title' %}
+Verificar status de Solicitação de adoção
+{% endblock %}
+
+{% block 'principal' %}
+  <h2>Status da Solicitação</h2>
+  <p><strong>Nome:</strong> {{ solicitacao.nome_completo }}</p>
+  <p><strong>Email:</strong> {{ solicitacao.email }}</p>
+  <p><strong>Mensagem:</strong> {{ solicitacao.mensagem }}</p>
+  <p><strong>Status:</strong> {{ solicitacao.get_status_display }}</p>
+
+{% endblock %}
