@@ -40,16 +40,12 @@ def solicitacao_adocao(request):
         if form.is_valid():
             form.instance.user = request.user
             form.save()
-            return HttpResponse("Formulário enviado com sucesso")
+            return redirect('base:Amor&Patas')
     else:
         form = SolicitacaoAdocaoForm()
 
     return render(request, 'solicitacao_adocao.html', {'form': form})
 
-"""def lista_solicitacoes(request):
-    solicitacoes = Solicitacao.objects.all()
-    return render(request, 'lista_solicitacoes.html', {'solicitacoes': solicitacoes})
-"""
 
 def verificar_status(request, solicitacao_id):
   solicitacao = get_object_or_404(SolicitacaoAdocao, pk=solicitacao_id)

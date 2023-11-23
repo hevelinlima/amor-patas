@@ -1,5 +1,4 @@
 from django.db import models
-from datetime import date
 from django.core.validators import MinValueValidator
 
 class Especies(models.Model):
@@ -24,7 +23,7 @@ class Porte(models.Model):
 class Raca(models.Model):
   raca = models.CharField(max_length=30)
   descricao = models.TextField() 
-  especie = models.ForeignKey(Especies, on_delete=models.DO_NOTHING, default=1)
+  especie = models.ForeignKey(Especies, on_delete=models.DO_NOTHING)
 
   def __str__(self) -> str:
     return self.raca

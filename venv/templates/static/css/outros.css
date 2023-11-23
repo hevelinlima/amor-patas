@@ -26,5 +26,17 @@
   background: #325e64;
 }
 
+.custom-image {
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+}
 
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
 

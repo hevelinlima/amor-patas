@@ -29,3 +29,8 @@ class SolicitacaoAdocao(models.Model):
   motivacao_para_adotar = models.TextField() 
   o_que_espera_da_adocao = models.TextField()
   status = models.CharField(max_length=20, choices=status_choices, default='Pendente')
+
+  class Meta: 
+    verbose_name = "Formulário de adoção"
+    verbose_name_plural = "Formulários de adoção"
+    ordering = ["nome_completo"]
