@@ -4,14 +4,14 @@
 
 {% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
 
-{% block 'title' %} Cadastro de animais{% endblock %}
+{% block 'title' %} Cadastro de espécies{% endblock %}
 
 {% block 'principal' %}
   <div class="container justify-content-center">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <h1 class="text-center">Cadastro de animais</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <h1 class="text-center">Cadastro de espécies</h1>
+        <form action="" method="POST">
           {% csrf_token %}
           
            {{ form|crispy }}
@@ -20,7 +20,7 @@
         </form>
         {% if sucesso %}
           <div class="alert alert-success" role="alert">
-            Animal cadastrado com sucesso!
+            Espécie cadastrada com sucesso!
           </div>
         {% endif %}
       </div>
