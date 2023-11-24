@@ -54,6 +54,9 @@ class Animais(models.Model):
   genero = models.ForeignKey(Genero, on_delete=models.DO_NOTHING)
   comportamento = models.CharField(max_length=255, default='Comportamento padrão') 
   photo = models.ImageField(upload_to='MEDIA_URL', blank=True, null=True)
+
+  def __str__(self) -> str:
+    return self.nome
   
   class Meta: 
     verbose_name = "Animal"
