@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+{% block 'title' %} Cadastro de colaboradores{% endblock %}
+
+{% block 'principal' %}
+  <div class="container justify-content-center">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Cadastro de colaboradores</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+           {{ form|crispy }}
+      
+          <input class="btn-primary btn-lg btn-enviar" type="submit" value="Cadastrar">
+        </form>
+        {% if sucesso %}
+          <div class="alert alert-success" role="alert">
+            Colaborador cadastrado com sucesso!
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
+
+{% block 'title' %} Cadastro de colaboradores{% endblock %}
+
+{% block 'principal' %}
+
+  <h1 class="text-center">Conheça nossos colaboradores</h1>
+
+  <div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        {% for colaborador in colaboradores %}
+        <div class="col-md-4">
+          <img src="{{ colaborador.foto.url }}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ colaborador.nome_completo }}</h5>
+            <strong class="card-text">
+              {{ colaborador.cargo }}
+            </strong>
+            <p class="card-text">{{ colaborador.formaçao_ou_certificações }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
