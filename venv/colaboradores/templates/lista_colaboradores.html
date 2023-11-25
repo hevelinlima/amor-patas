@@ -11,25 +11,21 @@
   <h1 class="text-center">Conheça nossos colaboradores</h1>
 
   <div class="container">
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        {% for colaborador in colaboradores %}
-        <div class="col-md-4">
-          <img src="{{ colaborador.foto.url }}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{ colaborador.nome_completo }}</h5>
-            <strong class="card-text">
-              {{ colaborador.cargo }}
-            </strong>
-            <p class="card-text">{{ colaborador.formaçao_ou_certificações }}</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for colaborador in colaboradores %}
+        <div class="col">
+          <div class="card h-100 card-all">
+            <img width="100%" src="{{ colaborador.foto.url }}" class="card-img-top custom-image" alt="...">
+            <div class="card-body card-details">
+              <h5 class="card-title">{{ colaborador.nome_completo }}</h5>
+              <strong class="card-text">
+                {{ colaborador.cargo }}
+              </strong>
+              <p class="card-text">{{ colaborador.formaçao_ou_certificações }}</p>
+            </div>
           </div>
         </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     </div>
   </div>
-
-
 {% endblock %}

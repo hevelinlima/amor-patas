@@ -6,6 +6,10 @@ body {
   font-size: 14px;
 }
 
+.h1-title{
+  margin: 25px;
+}
+
 .principal {
   padding: 5rem 0 10rem 0;
   background: #072e33;

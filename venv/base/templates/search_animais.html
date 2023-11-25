@@ -9,30 +9,30 @@ Pesquisa
 
 {% block 'principal' %}
   {% if pesquisa %}
-    <h1>Você procurou por {{ pesquisa }}</h1>
+    <h1 class="text-center h1-title">Você procurou por {{ pesquisa }}</h1>
     <br>
     <div class="container">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for animal in animais %}
           <div class="col">
-              <div class="card h-100 card-all">
-                <img width="100%" src="{{ animal.photo.url }}" class="card-img-top custom-image" alt="...">
-                <div class="card-body card-details">
-                  <h5 class="card-title">{{ animal.nome }}</h5>
-                  <p class="card-text">{{ animal.especie }}</p>
-                </div>
-                <div class="card-footer card-rp">
-                  <small class="text-body-secondary">
-                    <a href="{% url 'base:card_animal' animal.id %}" class="btn btn-primary">Ver {{ animal.nome }}</a>
-                  </small>
-                </div>
+            <div class="card h-100 card-all">
+              <img width="100%" src="{{ animal.photo.url }}" class="card-img-top custom-image" alt="...">
+              <a href="{% url 'base:card_animal' animal.id %}" class="btn-enviar text-center">Conheça {{ animal.nome }}</a>
+            </div>
+          </div>
+        {% empty %}
+          <div class="container justify-content-center">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
+                <h5 class="text-center">Não encontrado.</h5>
               </div>
             </div>
+          </div>
         {% endfor %}
       </div>
     </div>
   {% else %}
-    <h1>Nenhuma pesquisa realizada.</h1>
+    <h1 class="text-center h1-title">Nenhuma pesquisa realizada.</h1>
   {% endif %}
 
 {% endblock %}

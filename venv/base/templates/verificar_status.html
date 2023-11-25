@@ -9,10 +9,25 @@ Verificar status de Solicitação de adoção
 {% endblock %}
 
 {% block 'principal' %}
-  <h2>Status da Solicitação</h2>
-  <p><strong>Nome:</strong> {{ solicitacao.nome_completo }}</p>
-  <p><strong>Email:</strong> {{ solicitacao.email }}</p>
-  <p><strong>Mensagem:</strong> {{ solicitacao.mensagem }}</p>
-  <p><strong>Status:</strong> {{ solicitacao.get_status_display }}</p>
-
+  
+  <div class="container justify-content-center">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 ">
+        <h1 class="text-center h1-title">Status da sua solicitação de adoção</h1>
+        <div class="justify-content-center">
+          <h6><strong>Nome:</strong> {{ solicitacao.nome_completo }}</h6>
+          <h6><strong>Email:</strong> {{ solicitacao.endereço_email }}</h6>
+          <h6><strong>Animal a ser adotado:</strong> {{ solicitacao.animal_a_adotar }}</h6>
+          <h6><strong>Status:</strong> {{ solicitacao.get_status_display }}</h6>
+          <h6><strong>Motivação para a adoção:</strong> {{ solicitacao.motivacao_para_adotar }}</h6>
+          <h6><strong>O que espera da adoção:</strong> {{ solicitacao.o_que_espera_da_adocao }}</h6>
+        </div>
+        <div class="container text-center">
+          <div class="alert alert-info" role="alert">
+            <h6><strong>Status:</strong> {{ solicitacao.get_status_display }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

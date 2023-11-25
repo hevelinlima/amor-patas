@@ -10,13 +10,14 @@ Página de detalhes
 {% endblock %}
 
 {% block 'principal' %}
-    <div class="container div-body">
+<div class="div-body">
+    <div class="container">
+        <h1 class="text-center h1-title">Veja todos os detalhes sobre {{ card.nome }}</h1>
         <div class="row justify-content-center">
             <div class="col-4 ">
-                <img src="{{ card.photo.url }}" class="w-100" alt="...">
+                <img src="{{ card.photo.url }}" class="w-100 img-cards" alt="...">
             </div>
             <div class="col-4">
-                <strong>Nome:</strong> {{ card.nome }}<br>
                 <strong>Espécie:</strong> {{ card.especie }}<br>
                 <strong>Idade:</strong> {{ card.idade }} anos<br>
                 <strong>Porte:</strong> {{ card.porte }}<br>
@@ -24,8 +25,16 @@ Página de detalhes
                 <strong>Raça:</strong> {{ card.raça }}<br>
                 <strong>Vacinação em Dia:</strong> {{ card.vacinacao_em_dia }}<br>
                 <strong>Gênero:</strong> {{ card.genero }}<br>
+                <strong>Cirurgias:</strong> {{ card.cirurgias }}<br>
+                <strong>Problemas de saúde:</strong> {{ card.problemas_de_saude }}<br>
+                <strong>Medicações atuais:</strong> {{ card.medicacoes_atuais }}<br>
                 <strong>Comportamento do animal:</strong> {{ card.comportamento }}<br>
             </div>
         </div>
     </div>
+    <div class="container text-center div-button">
+        <a class="btn-primary btn-lg btn-enviar" href="{% url 'base:solicitacao_adocao' %}" target="_blank">Solicitar adoção de {{ card.nome }}</a>
+    </div>
+</div>
+    
 {% endblock %}

@@ -37,6 +37,18 @@
             {% if user.is_authenticated and user.solicitacaoadocao_set.all %}
               <a class="nav-link active a-white" aria-current="page" href="{% url 'base:verificar_status' solicitacao_id=user.solicitacaoadocao_set.first.id %}">Situação de adoção</a>
             {% endif %}
+            {% if user.is_authenticated and user.is_staff %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle a-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cadastros
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'colaboradores:cadastro_colaboradores' %}">Colaboradores</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'animais:cadastro_animais' %}">Animais</a></li>
+                </ul>
+              </li>
+            {% endif %}
             <a class="nav-link a-white" href="{% url 'base:contactus' %}">Contatos</a>
           </div>
           {% if request.user.is_authenticated %}

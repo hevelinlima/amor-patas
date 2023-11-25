@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from animais.models import Animais
-from base.forms import SolicitacaoAdocaoForm
+from base.forms import SolicitacaoAdocaoForm, ContactUsForm
 from base.models import SolicitacaoAdocao
 
 # Create your views here.
@@ -10,13 +10,10 @@ def inicio(request):
 
 def lista_animais(request):
   animais = Animais.objects.all()
-  
   return render(request, "lista_animais.html", {'animais': animais})
 
 def card_animal(request, id):
-
   card = Animais.objects.get(id = id)
-
   return render(request, "card_animais.html", {'card': card})
 
 def search_animais(request):
@@ -33,7 +30,7 @@ def search_animais(request):
     return render(request,'search_animais.html')
   
 
-
+@login_required
 def solicitacao_adocao(request):
     if request.method == 'POST':
         form = SolicitacaoAdocaoForm(request.POST)
@@ -46,7 +43,7 @@ def solicitacao_adocao(request):
 
     return render(request, 'solicitacao_adocao.html', {'form': form})
 
-
+@login_required
 def verificar_status(request, solicitacao_id):
   solicitacao = get_object_or_404(SolicitacaoAdocao, pk=solicitacao_id)
 
@@ -56,4 +53,13 @@ def verificar_status(request, solicitacao_id):
     return redirect('login')
 
 def contatos(request):
-  return render(request, 'contatos.html')
+  sucesso = False   
+  form = ContactUsForm(request.POST or None)
+  if form.is_valid(): 
+      sucesso = True
+      form.save()
+  contexto = {
+      'form':form,
+      'sucesso': sucesso
+    }
+  return render(request, 'contatos.html', contexto)

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 {% block 'head' %} <link rel="stylesheet" href="{% static 'css/outros.css' %}"> {% endblock %}
@@ -8,28 +9,29 @@
 {% block 'principal' %}
 
   <div class="container justify-content-center">
-    <h1>Entre em Contato - Amor e Patas</h1>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Entre em Contato Conosco -Equipe Amor e Patas</h1>
 
-    <p>Estamos aqui para ajudar. Se você tiver alguma dúvida ou precisar de mais informações, entre em contato conosco!</p>
+          <div class="alert alert-info" role="alert">
+            Estamos aqui para ajudar. Se você tiver alguma dúvida ou precisar de mais informações, entre em contato conosco!
+          </div>
 
-    <div class="contact-info">
-        <p><strong>Endereço:</strong> Rua dos Animais Felizes, 123</p>
-        <p><strong>Telefone:</strong> (11) 1234-5678</p>
-        <p><strong>Email:</strong> contato@amorepatasabrigo.com</p>
+          <div class="contact-info text-center">
+              <p><strong>Endereço:</strong> Rua dos Animais Felizes, 123</p>
+              <p><strong>Telefone:</strong> (11) 1234-5678</p>
+              <p><strong>Email:</strong> contato@amorepatasabrigo.com</p>
+          </div>
+
+          <form method="post">
+            {% csrf_token %}
+                
+            {{ form|crispy }}
+
+            <input class="btn-primary btn-lg btn-enviar" type="submit" value="Enviar mensagem">
+          </form>
+        </div>
     </div>
-
-    <form action="mailto:contato@amorepatasabrigo.com" method="post" enctype="text/plain">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
-        <button type="submit">Enviar Mensagem</button>
-    </form>
   </div>
 
 {% endblock %}

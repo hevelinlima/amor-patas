@@ -39,3 +39,16 @@ class SolicitacaoAdocao(models.Model):
     verbose_name = "Formulário de adoção"
     verbose_name_plural = "Formulários de adoção"
     ordering = ["nome_completo"]
+
+class ContactUs(models.Model):
+  nome = models.CharField(max_length=100)
+  endereço_de_email = models.EmailField()
+  mensagem = models.TextField()
+
+  def __str__(self) -> str:
+    return self.nome
+  
+  class Meta: 
+    verbose_name = "Formulário de contato"
+    verbose_name_plural = "Formulários de contato"
+    ordering = ["nome"]
