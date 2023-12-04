@@ -1,6 +1,6 @@
 # Bootcamp Back-end Python e Django
 
-## Projeto Final: AMOR & PATAS - Sistema de abrigo para animais  
+## Projeto Final: AMOR & PATAS - Sistema de gerenciamento de um abrigo para animais  
 
 <p align="center">
   <img alt="Página inicial do site do abrigo Amor & Patas" src=".github/preview.jpeg" width="100%">
