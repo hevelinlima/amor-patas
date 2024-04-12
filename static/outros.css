@@ -2,15 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  min-height: 76vh; 
+  min-height: 76vh;
   display: flex;
   flex-direction: column;
 }
-.h1-title{
+.h1-title {
   margin: 25px;
 }
 
-.btn-enviar{
+.btn-enviar {
   margin: 20px 20px;
 
   padding-top: 12px;
@@ -18,7 +18,7 @@
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 30px;
-  font-size: 14px; 
+  font-size: 14px;
   background: #072e33;
   color: #fff;
   text-decoration: none;
@@ -29,14 +29,14 @@
   background: #325e64;
 }
 
-.img-cards{
+.img-cards {
   border-radius: 20px;
 }
 
 .custom-image {
-  width: 100%; 
-  height: 200px; 
-  object-fit: cover; 
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .contact-info {
@@ -47,11 +47,11 @@
   margin-bottom: 10px;
 }
 
-.search-form{
+.search-form {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.div-button{
+.div-button {
   margin-top: 50px;
 }
